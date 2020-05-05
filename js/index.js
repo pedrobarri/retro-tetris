@@ -54,15 +54,28 @@ document.addEventListener('DOMContentLoaded', () =>{
   const gridSize = gridWidth * gridHeight;
   let currentRotation = 0;
   const grid = document.querySelector('.grid');
+  grid.setAttribute(
+    'style',
+    `height: ${gridHeight * gridHeight}px; width: ${gridWidth * gridHeight}px;`
+  );
   const previousGrid = document.querySelector('.previous-grid');
+  const previousShape = document.querySelector('.previous-shape');
+  previousGrid.setAttribute(
+    'style',
+    `height: ${gridHeight*4}px; width: ${gridHeight*4}px;`
+  );
+  previousShape.setAttribute(
+    'style',
+    `height: ${gridHeight*4}px; width: ${gridHeight*4}px;`
+  );
   const scoreDisplay = document.querySelector('.score-display');
   const linesDisplay = document.querySelector('.lines-display');
   const startBtn = document.querySelector('button');
   let timerId;
   let score = 0;
   let lines = 0;
+  const colors = [ 'blue', 'pink', 'navy', 'peach', 'yellow' ];
   
-
   const control = e => {
     if (e.keyCode === 39) {
       moveRight();
@@ -79,13 +92,21 @@ document.addEventListener('DOMContentLoaded', () =>{
   const createGrid = (gridSize) => {
     for (let i = 0; i < gridSize; i += 1) {
       let div = document.createElement('div');
-      if (i >= 190) {
-        div.setAttribute('class', 'block3')
+      div.setAttribute(
+        'style',
+        `height: ${gridHeight}px; width: ${gridHeight}px;background-repeat: round;`
+      );
+      if (i >= (gridSize - gridWidth)) {
+        div.setAttribute('class', 'green-block');
       }
       grid.appendChild(div);
     }
     for (let i = 0; i < 16; i += 1) {
       let div = document.createElement('div');
+      div.setAttribute(
+        'style',
+        `height: ${gridHeight}px; width: ${gridHeight}px;background-repeat: round;`
+      );
       previousGrid.appendChild(div);
     }
   };
@@ -101,13 +122,13 @@ document.addEventListener('DOMContentLoaded', () =>{
   let currentPosition = 4;
   const draw = () => {
     current.forEach(index => {
-      squares[currentPosition + index].classList.add('block')
+      squares[currentPosition + index].classList.add(`${colors[random]}-block`)
     });
   };
 
   const undraw = () => {
     current.forEach((index) => {
-      squares[currentPosition + index].classList.remove('block')
+      squares[currentPosition + index].classList.remove(`${colors[random]}-block`)
     });
   };
 
@@ -158,16 +179,16 @@ document.addEventListener('DOMContentLoaded', () =>{
 
   const displayShape = () => {
     displaySquares.forEach(square => {
-      square.classList.remove('block');
+      square.classList.remove(`${colors[random]}-block`);
     });
     smallTetrominos[nextRandom].forEach(index => {
-      displaySquares[displayIndex + index].classList.add('block')
+      displaySquares[displayIndex + index].classList.add(`${colors[nextRandom]}-block`)
     });
   };
 
   const freeze = () => {
     if (current.some(index => 
-      squares[currentPosition + index + gridWidth].classList.contains('block3') || 
+      squares[currentPosition + index + gridWidth].classList.contains('green-block') || 
       squares[currentPosition + index + gridWidth].classList.contains('block2'))
     ) {
       current.forEach(index => squares[index + currentPosition].classList.add('block2'))
@@ -214,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         linesDisplay.innerHTML = lines;
 
         row.forEach(index => {
-          squares[index].classList.remove('block2') || squares[index].classList.remove('block')
+          squares[index].classList.remove('block2') || squares[index].classList.remove(`${colors[random]}-block`)
         });
         // splice
         const squaresRemoved = squares.splice(currentIndex, gridWidth);

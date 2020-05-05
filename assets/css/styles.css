@@ -1,12 +1,17 @@
-div {
+body {
+  background: url('../images/bottom.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  margin: auto;
+}
+
+.grid div {
   background-color: yellow;
-  height: 20px;
-  width: 20px;
 }
 
 .grid {
-  height: 400px;
-  width: 200px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -24,8 +29,28 @@ div {
   margin-bottom: 10px;
 }
 
-.block {
-  background-color: blue;
+.green-block {
+  background-image: url('../images/green_block.png');
+}
+
+.blue-block {
+  background-image: url('../images/blue_block.png');
+}
+
+.pink-block {
+  background-image: url('../images/pink_block.png');
+}
+
+.navy-block {
+  background-image: url('../images/navy_block.png');
+}
+
+.peach-block {
+  background-image: url('../images/peach_block.png');
+}
+
+.yellow-block {
+  background-image: url('../images/yellow_block.png');
 }
 
 .block2 {
