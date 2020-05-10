@@ -1,19 +1,27 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
 body {
-  background: url('../images/bottom.jpeg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
   margin: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.play-button {
+  background-color: #4caf50;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
 }
 
 .grid div {
-  background-color: yellow;
+  /* background-color: #f9f9db; */
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
+  outline: solid 2px;
 }
 
 .previous-grid {
