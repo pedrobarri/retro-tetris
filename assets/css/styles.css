@@ -1,0 +1,66 @@
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  margin: auto;
+  background-image: url('../images/mario_back.png');
+}
+
+.play-button {
+  background-color: #4caf50;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  outline: solid 2px;
+}
+
+.previous-grid {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.previous-shape {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.green-block {
+  background-image: url('../images/green_block.png');
+}
+
+.blue-block {
+  background-image: url('../images/blue_block.png');
+}
+
+.pink-block {
+  background-image: url('../images/pink_block.png');
+}
+
+.navy-block {
+  background-image: url('../images/navy_block.png');
+}
+
+.peach-block {
+  background-image: url('../images/peach_block.png');
+}
+
+.yellow-block {
+  background-image: url('../images/yellow_block.png');
+}
+
+.block2 {
+  background-color: purple;
+}
+
+.block3 {
+  background-color: green;
+}
