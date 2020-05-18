@@ -1,0 +1,23 @@
+{
+  "homepage": "https://pedrobarri.github.io/tetris",
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "Tetris game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrobarri/tetris.git"
+  },
+  "author": "Pedro Barri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrobarri/tetris/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
