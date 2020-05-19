@@ -93,16 +93,14 @@ const createGrid = (grid, blocksPerRow) => {
 
 const getDimensiones = () => {
   const squareBlockSize = 20;
-  const height = window.innerHeight;
   const isMobile = window.innerWidth < 550;
   const body = document.querySelector('body');
   const styleToAdd = isMobile
     ? 'background-position: center;'
     : 'background-size: cover;';
   body.setAttribute('style', styleToAdd);
-  const reduceHeight = isMobile ? 400 : 200;
-  const gridHeight = Math.round(height / 100) * 100 - reduceHeight;
-  const gridWidth = gridHeight / 2;
+  const gridHeight = 400;
+  const gridWidth = 200;
   const blocksPerColumn = gridHeight / squareBlockSize;
   return {
     squareBlockSize,
